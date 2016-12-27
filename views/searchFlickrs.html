@@ -1,0 +1,25 @@
+<div class="container cf">
+    <div class="row" ng-controller="FlickrsController">
+        <div class="col-xs-12 col-lg-6">
+            <div class="form-group">
+                <label for="searchFlickrs">Image Title</label>
+                <input ng-model="searchterm" 
+                value=" "
+                style="background-color: #fff;" 
+                type="text" class="form-control" 
+                ng-change="fetch()"
+                id="searchFlickrs">
+            </div>
+           <div ng-repeat="s in details">
+              <div class="card's">
+                <img class="card-img-top" ng-src="{{s.media.m}}" alt="Card image cap">
+                <div class="card-block">
+                <h4 class="card-title">Title: {{s.title}}</h4>
+                <p class="card-text">Author: {{s.author}}</p>
+                <p class="card-text">tags: {{s.tags}}</p>
+                <a href="{{s.link}}" class="btn btn-primary">Click to View the full Image</a>
+            </div>
+           </div>    
+        </div>
+    </div>
+</div>
